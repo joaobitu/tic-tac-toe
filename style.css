@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+} 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#game-table {
+    background-color: burlywood;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+  
+}
+.game-cell {
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+
+}
+.game-row {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
