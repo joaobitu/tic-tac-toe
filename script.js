@@ -11,8 +11,15 @@ const player2 = playerCreator(prompt("Player 2 Name?"),prompt("X or 0 ?"));
 
 
 const Gameboard = (() => {
+  
     let gameboard = [ null , null , null , null , null , null, null , null , null];
     const boardCheck = () => {
+      if (gameboard.includes(null)){
+
+      }  else {
+        return console.log("It's a TIE!");
+      }
+      }
       console.log(gameboard);
       if ((gameboard[0] != null) && (gameboard[0] == gameboard[1]) && (gameboard[1] == gameboard[2])){
         if (gameboard[0] == 'X'){
@@ -31,7 +38,7 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+          
       } else if ((gameboard[3] != null) && (gameboard[3] == gameboard[4]) && (gameboard[4] == gameboard[5])){
         if (gameboard[3] == 'X'){
           if (player1.choice == 'X'){
@@ -49,7 +56,7 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+          
       } else if ((gameboard[6] != null) && (gameboard[6] == gameboard[7]) && (gameboard[7] == gameboard[8])){
         if (gameboard[6] == 'X'){
           if (player1.choice == 'X'){
@@ -67,7 +74,7 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+       
       } else if ((gameboard[0] != null) && (gameboard[0] == gameboard[3]) && (gameboard[3] == gameboard[6])){
         if (gameboard[0] == 'X'){
           if (player1.choice == 'X'){
@@ -85,7 +92,7 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+         
       } else if ((gameboard[1] != null) && (gameboard[1] == gameboard[4]) && (gameboard[4] == gameboard[7])){
         if (gameboard[1] == 'X'){
           if (player1.choice == 'X'){
@@ -103,7 +110,7 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+         
       } else if ((gameboard[2] != null) && (gameboard[2] == gameboard[5]) && (gameboard[5] == gameboard[8])){
         if (gameboard[2] == 'X'){
           if (player1.choice == 'X'){
@@ -121,7 +128,7 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+          
       } else if ((gameboard[0] != null) && (gameboard[0] == gameboard[4]) && (gameboard[4] == gameboard[8])){
         if (gameboard[0] == 'X'){
           if (player1.choice == 'X'){
@@ -139,7 +146,7 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+         
       } else if ((gameboard[2] != null) && (gameboard[2] == gameboard[4]) && (gameboard[4] == gameboard[6])){
         if (gameboard[2] == 'X'){
           if (player1.choice == 'X'){
@@ -157,9 +164,9 @@ const Gameboard = (() => {
               console.log(`${player2.name} has Won!`);
             }
           }
-          reset()
+         
       } 
-     }
+     
    const reset = () => {
     
     Gameboard.gameboard.fill(null);
@@ -169,7 +176,7 @@ const Gameboard = (() => {
    
 
  }
-    return {gameboard, boardCheck, reset};
+    return {gameboard, boardCheck,  reset};
 })();
 
 
@@ -202,4 +209,4 @@ document.querySelectorAll('.game-cell').forEach(item => {
 
  document.querySelector('button').addEventListener('click', () =>{
         return Gameboard.reset();
- });
+ })
